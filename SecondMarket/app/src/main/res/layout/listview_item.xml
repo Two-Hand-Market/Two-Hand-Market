@@ -3,7 +3,8 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="5dp">
+    android:paddingTop="5dp"
+    android:background="@drawable/text_selecter">
 
     <ImageView
         android:id="@+id/goodpic"
@@ -12,7 +13,6 @@
         android:src="@mipmap/ic_launcher"/>
 
     <RelativeLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="5dp"
