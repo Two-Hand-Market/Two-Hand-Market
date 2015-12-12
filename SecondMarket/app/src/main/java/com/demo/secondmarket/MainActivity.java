@@ -48,7 +48,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         //初始化监听事件
         initevent();
         //初始调用主页的Fragement
-        setSelect(0);
+        setSelect(4);
     }
 
     private void initevent() {
@@ -63,6 +63,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         mAdd_img.setOnClickListener(this);
         mFind_img.setOnClickListener(this);
         mMe_img.setOnClickListener(this);
+
     }
 
     private void initview() {
@@ -83,8 +84,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         mFind_tv= (TextView) findViewById(R.id.find_tv);
         mMe_tv= (TextView) findViewById(R.id.me_tv);
 
+
 //        mMainViewFragment = new MainViewFragment();
-//        mSortFragment = new SortFragment();
+//        mSortFragment = new NewsFragment();
 //        mMeFragment = new MeFragment();
 
         titleText = (TextView) findViewById(R.id.titleText);
@@ -143,7 +145,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
             case 1:
                 if(mSortFragment == null){
-                    mSortFragment = new SortFragment();
+                    mSortFragment = new NewsFragment();
                     transaction.add(R.id.framecontent,mSortFragment);
                 }else{
                     transaction.show(mSortFragment);
