@@ -8,8 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+<<<<<<< HEAD
 import android.widget.AdapterView;
 import android.widget.Toast;
+=======
+>>>>>>> upstream/dev
 
 import com.markmao.pulltorefresh.widget.XListView;
 
@@ -22,7 +25,10 @@ import sql.Service;
 public class MainViewFragment extends Fragment  {
 
 
+<<<<<<< HEAD
     private Context context;
+=======
+>>>>>>> upstream/dev
     private XListView listTopic;
     private ListTopicAdapter topicData;
 
@@ -42,8 +48,13 @@ public class MainViewFragment extends Fragment  {
         listTopic.setOnScrollListener(new XListView.OnXScrollListener() {
             @Override
             public void onXScrolling(View view) {
+<<<<<<< HEAD
                 Service service = new Service(getActivity());
                 topicData = new ListTopicAdapter(getActivity(), service.getData(0, 10));
+=======
+                Service service=new Service(getActivity());
+                topicData = new ListTopicAdapter(getActivity(),service.getData(0,10));
+>>>>>>> upstream/dev
                 listTopic.setAdapter(topicData);
                 listTopic.stopRefresh();
             }
@@ -52,6 +63,7 @@ public class MainViewFragment extends Fragment  {
             public void onScrollStateChanged(AbsListView view, int scrollState) {
 
             }
+<<<<<<< HEAD
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
@@ -68,7 +80,14 @@ public class MainViewFragment extends Fragment  {
                 getActivity().startActivity(intent);
             }
         });
+=======
+>>>>>>> upstream/dev
 
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+            }
+        });
         return retView;
     }
 

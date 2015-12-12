@@ -14,7 +14,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     private LinearLayout mMainView;
     private LinearLayout mSort;
-    private LinearLayout mAdd;
+//    private LinearLayout mAdd;
     private LinearLayout mFind;
     private LinearLayout mMe;
 
@@ -41,20 +41,20 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //      requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.login);
+        setContentView(R.layout.content_main);
 
         //初始化
         initview();
         //初始化监听事件
         initevent();
         //初始调用主页的Fragement
-        setSelect(4);
+        setSelect(0);
     }
 
     private void initevent() {
         mMainView.setOnClickListener(this);
         mSort.setOnClickListener(this);
-        mAdd.setOnClickListener(this);
+//        mAdd.setOnClickListener(this);
         mFind.setOnClickListener(this);
         mMe.setOnClickListener(this);
 
@@ -69,7 +69,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private void initview() {
         mMainView = (LinearLayout) findViewById(R.id.mainview);
         mSort = (LinearLayout) findViewById(R.id.sort);
-        mAdd = (LinearLayout) findViewById(R.id.add);
+//        mAdd = (LinearLayout) findViewById(R.id.add);
         mFind = (LinearLayout) findViewById(R.id.find);
         mMe = (LinearLayout) findViewById(R.id.me);
 
@@ -106,7 +106,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             case R.id.sort_img:
                 setSelect(1);
                 break;
-            case R.id.add:
             case R.id.add_img:
                 setSelect(2);
                 break;
@@ -162,7 +161,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 }else{
                     transaction.show(mAddFragment);
                 }
-                mAdd_img.setImageResource(R.drawable.icon_5);
+                mAdd_img.setImageResource(R.drawable.icon_add);
                 titleText.setText("添加");
                 break;
 
@@ -217,7 +216,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private void resetImgs() {
         mMainView_img.setImageResource(R.drawable.icon_1_n);
         mSort_img.setImageResource(R.drawable.icon_2_n);
-        mAdd_img.setImageResource(R.drawable.icon_5);
+        mAdd_img.setImageResource(R.drawable.icon_add);
         mFind_img.setImageResource(R.drawable.icon_4_n);
         mMe_img.setImageResource(R.drawable.icon_3_n);
 

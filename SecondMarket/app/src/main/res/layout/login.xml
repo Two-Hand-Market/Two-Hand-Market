@@ -1,87 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
     android:paddingTop="15dp"
-    android:paddingEnd="5dp"
+    android:paddingEnd="15dp"
     tools:context="ui.LoginActivity">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:textSize="25dp"
-        android:hint="账号"
-        android:ems="10"
-        android:id="@+id/editText"
+    <LinearLayout
+        android:gravity="center"
         android:layout_weight="1"
-        android:layout_marginTop="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:textSize="25dp"
-        android:hint="密码"
-        android:id="@+id/editText2"
-        android:layout_marginTop="46dp"
-        android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
-
-    <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="登  录"
-        android:textSize="25dp"
-        android:background="@drawable/bt_selecter"
-        android:id="@+id/login"
-        android:layout_below="@+id/editText2"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_marginTop="32dp"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2" />
+        android:layout_height="0dp">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:textSize="25dp"
+            android:hint="账号"
+            android:ems="15"
+            android:id="@+id/editText" />
+    </LinearLayout>
 
-    <Button
+    <LinearLayout
+        android:gravity="center"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="注  册"
-        android:textSize="25dp"
-        android:background="@drawable/bt_selecter"
-        android:id="@+id/register"
-        android:layout_below="@+id/login"
-        android:layout_marginTop="31dp"
-        android:layout_alignLeft="@+id/login"
-        android:layout_alignStart="@+id/login"
-        android:layout_alignRight="@+id/login"
-        android:layout_alignEnd="@+id/login" />
+        android:layout_height="0dp">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="15"
+            android:textSize="25dp"
+            android:hint="密码"
+            android:id="@+id/editText2"
+           />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="忘记密码"
-        android:textColor="#ef1e0f"
-        android:id="@+id/textView"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/register"
-        android:layout_alignRight="@+id/register"
-        android:layout_alignEnd="@+id/register" />
+    </LinearLayout>
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="自动登录"
-        android:id="@+id/checkBox"
-        android:layout_alignLeft="@+id/register"
-        android:layout_alignStart="@+id/register"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_alignTop="@+id/textView" />
-</RelativeLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="登  录"
+            android:textSize="25dp"
+            android:background="@drawable/bt_selecter"
+            android:id="@+id/login"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注  册"
+            android:textSize="25dp"
+            android:background="@drawable/bt_selecter"
+            android:id="@+id/register"
+             />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal">
+        <CheckBox
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自动登录"
+            android:id="@+id/checkBox"
+            />
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="忘记密码"
+            android:textColor="#ef1e0f"
+            android:id="@+id/textView"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

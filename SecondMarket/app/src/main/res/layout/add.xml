@@ -3,18 +3,22 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    >
+    android:paddingTop="10dp">
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Comming Soon..."-->
+        <!--/>-->
+
 
 
     <LinearLayout
-        android:layout_weight="1"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/addbackground"
-        android:layout_marginTop="10dp">
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/addbackground">
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,16 +33,15 @@
             android:inputType="text"
             android:ems="15"
             android:id="@+id/add_title_et"
-            />
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="1"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         android:background="@color/addbackground">
 
         <TextView
@@ -54,17 +57,16 @@
             android:inputType="textMultiLine"
             android:ems="15"
             android:id="@+id/add_price_et"
-            />
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="1"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:background="@color/addbackground"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -79,17 +81,16 @@
             android:inputType="textMultiLine"
             android:ems="15"
             android:id="@+id/add_oldprice_et"
-            />
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="1"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:background="@color/addbackground"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -104,16 +105,15 @@
             android:inputType="textMultiLine"
             android:ems="15"
             android:id="@+id/add_content_et"
-            />
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="1"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         android:background="@color/addbackground">
 
         <TextView
@@ -129,16 +129,15 @@
             android:inputType="textMultiLine"
             android:ems="15"
             android:id="@+id/add_master_et"
-            />
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="1"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
         android:background="@color/addbackground">
 
         <TextView
@@ -154,23 +153,15 @@
             android:inputType="textMultiLine"
             android:ems="15"
             android:id="@+id/add_phone_et"
-            />
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="5dp">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_weight="0.5"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:background="@color/addbackground">
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -180,7 +171,6 @@
             android:layout_height="wrap_content">
 
             <ImageButton
-                android:scaleType="centerInside"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/photo"
@@ -204,7 +194,6 @@
             >
 
             <ImageButton
-                android:scaleType="centerInside"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/camera"
@@ -218,28 +207,6 @@
                 android:textSize="20sp"/>
 
         </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="5dp">
-
-    </LinearLayout>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="发  布"
-        android:id="@+id/add_commit"
-        android:textSize="25sp"
-        android:background="@drawable/bt_selecter"
-        android:layout_gravity="center_horizontal" />
-
-    <LinearLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
 
     </LinearLayout>
 

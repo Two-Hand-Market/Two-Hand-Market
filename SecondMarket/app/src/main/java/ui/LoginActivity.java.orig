@@ -50,7 +50,10 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.login);
         //建立或打开数据库
         db= SQLiteDatabase.openOrCreateDatabase(LoginActivity.this.getFilesDir().toString() + "/test.dbs", null);
+<<<<<<< HEAD
         createDb();
+=======
+>>>>>>> upstream/dev
         etuser = (EditText)findViewById(R.id.editText);
         etpwd = (EditText)findViewById(R.id.editText2);
         cb=(CheckBox)findViewById(R.id.checkBox);
@@ -162,12 +165,19 @@ public class LoginActivity extends Activity {
                     Intent intent = new Intent();
                     intent.setClass(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
+<<<<<<< HEAD
                     LoginActivity.this.finish();
+=======
+>>>>>>> upstream/dev
                     return true;
                 }
 
             }catch(SQLiteException e){
+<<<<<<< HEAD
 
+=======
+                createDb();
+>>>>>>> upstream/dev
             }
             return false;
         }
@@ -175,7 +185,11 @@ public class LoginActivity extends Activity {
     }
     //建立数据库
     public void createDb() {
+<<<<<<< HEAD
         db.execSQL("create table if not exists tb_user( name varchar(30) primary key,password varchar(30))");
+=======
+        db.execSQL("create table tb_user( name varchar(30) primary key,password varchar(30))");
+>>>>>>> upstream/dev
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

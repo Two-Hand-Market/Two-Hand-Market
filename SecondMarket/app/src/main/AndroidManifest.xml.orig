@@ -21,7 +21,10 @@
         <activity android:name=".Activity_topicDetail"></activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name="ui.RegisterActivity"></activity>
+<<<<<<< HEAD
         <activity android:name=".ActivityGoodsDetails"></activity>
+=======
+>>>>>>> upstream/dev
     </application>
 
 </manifest>

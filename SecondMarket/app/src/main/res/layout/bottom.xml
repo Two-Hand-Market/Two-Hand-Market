@@ -57,25 +57,25 @@
             android:text="消息"/>
 
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/add"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_weight="1">
+    <!--<LinearLayout-->
+        <!--android:id="@+id/add"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_weight="1">-->
 
-        <ImageButton
-            android:scaleType="centerInside"
-            android:id="@+id/add_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon_5"
-            android:background="#00000000"
-            android:clickable="false"
-            />
+        <!--<ImageButton-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:id="@+id/add_img"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/icon_5"-->
+            <!--android:background="#00000000"-->
+            <!--android:clickable="false"-->
+            <!--/>-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
     <LinearLayout
         android:id="@+id/find"
         android:layout_width="0dp"
@@ -100,7 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/textcolor"
-            android:text="发现"/>
+            android:text="搜索"/>
 
     </LinearLayout>
     <LinearLayout

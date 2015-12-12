@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import sql.Service;
 import sql.Topic;
@@ -70,6 +71,7 @@ public class AddFragment extends Fragment implements View.OnClickListener{
             case R.id.add_commit:
                 Service service = new Service(getActivity().getApplicationContext());
                 service.addData(getTopic());
+                Toast.makeText(getActivity().getApplication(),"发布成功！",Toast.LENGTH_SHORT).show();
                 break;
         }
     }
