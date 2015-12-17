@@ -1,9 +1,11 @@
 package sql;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2015/11/20.
  */
-public class Topic {
+public class Topic implements Serializable {
 
     private Integer id;
     private String title;//标题

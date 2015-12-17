@@ -37,6 +37,13 @@ public class ListTopicAdapter extends BaseAdapter{
         return topicList.get(position);
     }
 
+    public Topic getItemData(int position)
+    {
+        Topic topic = new Topic();
+        topic = topicList.get(position-1);
+        return topic;
+    }
+
     @Override
     public long getItemId(int position) {
         return position;

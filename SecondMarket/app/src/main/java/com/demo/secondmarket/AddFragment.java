@@ -1,6 +1,8 @@
 package com.demo.secondmarket;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,17 +10,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import imageadd.ImageUtils;
 import sql.Service;
 import sql.Topic;
+import utils.MessageInteface;
 
 /**
  * Created by Administrator on 2015/11/19.
  */
 public class AddFragment extends Fragment implements View.OnClickListener{
 
+//    private static final int RESULT_CANCELED = 0;
     private Context context;
+    private MessageInteface mi;
 
     private EditText mTitleEt;
     private EditText mPriceEt;
@@ -29,10 +37,14 @@ public class AddFragment extends Fragment implements View.OnClickListener{
 
     private Button mCommitBt;
 
+    private LinearLayout mImageAddLayout;
+    private ImageView mImageShow;
+
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         context = this.getActivity().getApplicationContext();
+        mi = (MessageInteface)this.getActivity();
     }
 
     @Override
@@ -44,7 +56,9 @@ public class AddFragment extends Fragment implements View.OnClickListener{
     }
 
     private void initevent() {
+
         mCommitBt.setOnClickListener(this);
+        mImageAddLayout.setOnClickListener(this);
     }
 
     private void initview(View v) {
@@ -63,6 +77,9 @@ public class AddFragment extends Fragment implements View.OnClickListener{
         mTelEt.setText("18888888");
 
         mCommitBt= (Button) v.findViewById(R.id.add_commit);
+
+        mImageAddLayout= (LinearLayout) v.findViewById(R.id.add_image_btn);
+        mImageShow= (ImageView) v.findViewById(R.id.image_show);
     }
 
     @Override
@@ -72,6 +89,9 @@ public class AddFragment extends Fragment implements View.OnClickListener{
                 Service service = new Service(getActivity().getApplicationContext());
                 service.addData(getTopic());
                 Toast.makeText(getActivity().getApplication(),"发布成功！",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.add_image_btn:
+                showImagePickDialog();
                 break;
         }
     }
@@ -86,4 +106,30 @@ public class AddFragment extends Fragment implements View.OnClickListener{
         topic.setTellPhone(mTelEt.getText().toString());
         return topic;
     }
+
+    public void showImagePickDialog() {
+        String title = "获取图片方式";
+        String[] choices = new String[]{"拍照", "从手机中选择"};
+
+        new AlertDialog.Builder(getActivity())
+                .setTitle(title)
+                .setItems(choices, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        switch (which) {
+                            case 0:
+                                mi.showMessage("0");
+                                ImageUtils.openCameraImage(getActivity());
+                                break;
+                            case 1:
+                                mi.showMessage("1");
+                                ImageUtils.openLocalImage(getActivity());
+                                break;
+                        }
+                    }
+                })
+                .setNegativeButton("返回", null)
+                .show();
+    }
+
 }

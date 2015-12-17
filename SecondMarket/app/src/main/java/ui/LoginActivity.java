@@ -30,6 +30,7 @@ public class LoginActivity extends Activity {
     private static EditText etpwd;
     private EditText edname;
     private EditText edpassword;
+    private Integer user_id;
     private static String user;
     private static String pwd;
     public static SQLiteDatabase db;
@@ -107,6 +108,7 @@ public class LoginActivity extends Activity {
     //从SharePerferences中读取用户的账号和密码
     public void checkIfRemember(){
         SharedPreferences sp=getSharedPreferences(SP_INFOS,MODE_PRIVATE);
+
         user=sp.getString(Userid,null);
         pwd=sp.getString(Password,null);
         if(user!=null&&pwd!=null){
@@ -175,7 +177,7 @@ public class LoginActivity extends Activity {
     }
     //建立数据库
     public void createDb() {
-        db.execSQL("create table if not exists tb_user( name varchar(30) primary key,password varchar(30))");
+        db.execSQL("create table if not exists tb_user(name varchar(30) primary key,password varchar(30))");
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
