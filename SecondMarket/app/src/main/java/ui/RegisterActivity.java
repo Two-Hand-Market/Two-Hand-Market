@@ -37,7 +37,7 @@ public class RegisterActivity extends Activity {
     protected void onDestroy() {
         // TODO Auto-generated method stub
         super.onDestroy();
-        db.close();
+        //db.close();
     }
 
     @Override
@@ -87,7 +87,7 @@ public class RegisterActivity extends Activity {
 
             }
         });
-
+RegisterActivity.this.onDestroy();
     }
 
     // 添加用户
