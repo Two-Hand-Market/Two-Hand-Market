@@ -24,4 +24,7 @@
         <activity android:name=".ActivityGoodsDetails"></activity>
     </application>
 
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+
 </manifest>

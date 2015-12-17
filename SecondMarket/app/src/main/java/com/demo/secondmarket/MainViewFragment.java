@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.Toast;
 
@@ -15,11 +14,12 @@ import com.markmao.pulltorefresh.widget.XListView;
 
 import adapter.ListTopicAdapter;
 import sql.Service;
+import sql.Topic;
 
 /**
  * Created by Administrator on 2015/11/16.
  */
-public class MainViewFragment extends Fragment  {
+public class MainViewFragment extends Fragment implements XListView.IXListViewListener {
 
 
     private Context context;
@@ -39,35 +39,28 @@ public class MainViewFragment extends Fragment  {
         Service service=new Service(getActivity());
         topicData = new ListTopicAdapter(getActivity(),service.getData(0,10));
         listTopic.setAdapter(topicData);
-        listTopic.setOnScrollListener(new XListView.OnXScrollListener() {
-            @Override
-            public void onXScrolling(View view) {
-                Service service = new Service(getActivity());
-                topicData = new ListTopicAdapter(getActivity(), service.getData(0, 10));
-                listTopic.setAdapter(topicData);
-                listTopic.stopRefresh();
-            }
-
-            @Override
-            public void onScrollStateChanged(AbsListView view, int scrollState) {
-
-            }
-
-            @Override
-            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-
-            }
-        });
+        listTopic.setXListViewListener(this);
 
         listTopic.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(context, parent.getItemIdAtPosition(position) + "", Toast.LENGTH_SHORT).show();
+
+                Topic topic = new Topic();
+                topic = topicData.getItemData(position);
+
                 Intent intent =new Intent();
                 intent.setClass(getActivity(),ActivityGoodsDetails.class);
+                Bundle bundle=new Bundle();
+
+                bundle.putSerializable("topic", topic);
+                intent.putExtras(bundle);
+
+
                 getActivity().startActivity(intent);
             }
         });
+
+
 
         return retView;
     }
@@ -82,9 +75,18 @@ public class MainViewFragment extends Fragment  {
     }
 
 
+    @Override
+    public void onRefresh() {
+        Service service = new Service(getActivity());
+        topicData = new ListTopicAdapter(getActivity(), service.getData(0, 10));
+        listTopic.setAdapter(topicData);
+        listTopic.stopRefresh();
+        Toast.makeText(context,"刷新成功",Toast.LENGTH_SHORT).show();
+    }
 
-
-
-
-
+    @Override
+    public void onLoadMore() {
+        Toast.makeText(context,"加载成功",Toast.LENGTH_SHORT).show();
+        listTopic.stopLoadMore();
+    }
 }

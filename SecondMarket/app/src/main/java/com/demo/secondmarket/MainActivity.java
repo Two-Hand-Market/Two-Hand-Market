@@ -1,5 +1,6 @@
 package com.demo.secondmarket;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -10,7 +11,10 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainActivity extends FragmentActivity implements View.OnClickListener{
+import imageadd.ImageUtils;
+import utils.MessageInteface;
+
+public class MainActivity extends FragmentActivity implements View.OnClickListener, MessageInteface {
 
     private LinearLayout mMainView;
     private LinearLayout mSort;
@@ -83,11 +87,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         mSort_tv= (TextView) findViewById(R.id.sort_tv);
         mFind_tv= (TextView) findViewById(R.id.find_tv);
         mMe_tv= (TextView) findViewById(R.id.me_tv);
-
-
-//        mMainViewFragment = new MainViewFragment();
-//        mSortFragment = new NewsFragment();
-//        mMeFragment = new MeFragment();
 
         titleText = (TextView) findViewById(R.id.titleText);
     }
@@ -225,4 +224,62 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         mFind_tv.setTextColor(getResources().getColor(R.color.textcolor));
         mMe_tv.setTextColor(getResources().getColor(R.color.textcolor));
     }
+
+    @Override
+    public void showMessage(String msg) {
+        if(msg.equals("0")){    // 拍照
+
+
+        }
+        else
+            if(msg.equals("1")){ // 图库选择
+
+            }
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+//        if (resultCode == getActivity().RESULT_CANCELED) {
+//            return;
+//        }
+
+        switch (requestCode) {
+            // 拍照获取图片
+            case ImageUtils.GET_IMAGE_BY_CAMERA:
+                // uri传入与否影响图片获取方式,以下二选一
+                // 方式一,自定义Uri(ImageUtils.imageUriFromCamera),用于保存拍照后图片地址
+                if(ImageUtils.imageUriFromCamera != null) {
+                    // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
+//                    mImageShow.setImageURI(ImageUtils.imageUriFromCamera);
+                    // 对图片进行裁剪
+//                    ImageUtils.cropImage(getActivity(), ImageUtils.imageUriFromCamera);
+                    break;
+                }
+
+                break;
+            // 手机相册获取图片
+            case ImageUtils.GET_IMAGE_FROM_PHONE:
+//                if(data != null && data.getData() != null) {
+//                    // 可以直接显示图片,或者进行其他处理(如压缩或裁剪等)
+//                    mImageShow.setImageURI(data.getData());
+//
+//                    // 对图片进行裁剪
+////                    ImageUtils.cropImage(getActivity(), data.getData());
+//                }
+                break;
+            // 裁剪图片后结果
+            case ImageUtils.CROP_IMAGE:
+                if(ImageUtils.cropImageUri != null) {
+                    // 可以直接显示图片,或者进行其他处理(如压缩等)
+//                    mImageShow.setImageURI(ImageUtils.cropImageUri);
+                }
+                break;
+            default:
+                break;
+
+        }
+    }
+
 }

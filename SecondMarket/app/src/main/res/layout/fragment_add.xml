@@ -200,14 +200,16 @@
             android:orientation="horizontal"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:id="@+id/add_image_btn"
             android:layout_height="wrap_content"
             >
 
-            <ImageButton
+            <ImageView
                 android:scaleType="centerInside"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/camera"
+                android:id="@+id/image_show"
                 android:background="#00000000"
                 />
 
