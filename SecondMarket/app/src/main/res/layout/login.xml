@@ -83,21 +83,12 @@
         android:layout_height="0dp"
         android:orientation="horizontal">
         <CheckBox
-            android:layout_weight="1"
+            android:layout_weight="0.35"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="自动登录"
+            android:layout_height="53dp"
+            android:text="记住密码"
             android:id="@+id/checkBox"
-            />
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="忘记密码"
-            android:textColor="#ef1e0f"
-            android:id="@+id/textView"
-            />
+            android:checked="false" />
     </LinearLayout>
 
 

@@ -159,8 +159,7 @@ public class LoginActivity extends Activity {
                 }
                 else{
                     new AlertDialog.Builder(LoginActivity.this).setTitle("正确")
-                            .setMessage("成功登录").setPositiveButton("确定", null)
-                            .show();
+                            .setMessage("成功登录").show();
                     Intent intent = new Intent();
                     intent.setClass(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
